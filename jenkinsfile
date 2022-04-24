@@ -1,0 +1,24 @@
+
+pipeline {
+    agent any
+   
+               
+       stages {
+
+           
+           stage('test') {
+                  steps {
+                          sh 'whoami'
+                          sh 'ls -a'
+                         
+                        }
+              }
+           
+           stage('upload to server') {
+                  steps {
+                          sh 'cp index.html /var/www/html'
+                        }
+              }
+             
+       }
+}
